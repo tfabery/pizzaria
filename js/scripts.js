@@ -71,6 +71,12 @@ function addTopping() {
                           '</div>')
 };
 
+function resetPage() {
+  $('.modal-body').empty();
+  $('.additional').empty();
+  $('#confirm').modal('hide');
+  $('.size').val( $('.size').prop('defaultSelected'));
+}
 //===========================FrontEnd==========================
 $(function() {
   var myPizza = new Pizza();
@@ -113,9 +119,9 @@ $(function() {
     }
   });
 
-  $('form#pizza').submit(function(event) {
+  $('form.pizza').submit(function(event) {
     event.preventDefault();
 
-
+    resetPage();
   });
 });

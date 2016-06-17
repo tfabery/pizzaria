@@ -15,7 +15,7 @@
           <div class="form-group">
             <h5>Size:</h5>
             <select class="size">
-              <option value="large">Large</option>
+              <option value="large" selected="selected">Large</option>
               <option value="medium">Medium</option>
               <option value="small">Small</option>
               <option value="personal">Personal</option>
@@ -26,7 +26,7 @@
             <h5>Crust:</h5>
             <select class="crust">
               <option value="thin">Thin</option>
-              <option value="regular">Regular</option>
+              <option value="regular" selected="selected">Regular</option>
               <option value="deep-dish">Deep Dish</option>
             </select>
           </div>
@@ -34,7 +34,7 @@
           <div class="form-group">
             <h5>Cheese:</h5>
             <select class="cheese">
-              <option value="true">Yes</option>
+              <option value="true" selected="selected">Yes</option>
               <option value="false">No</option>
             </select>
           </div>
@@ -42,18 +42,18 @@
           <div class="form-group">
             <h5>Sauce:</h5>
             <select class="sauce">
-              <option value="original">Original</option>
+              <option value="original" selected="selected">Original</option>
               <option value="bbq">BBQ</option>
               <option value="alfredo">Alfredo</option>
               <option value="no">None</option>
             </select>
           </div>
 
-          <div class="form-group">
+          <!-- <div class="form-group">
             <h5>Toppping:</h5>
             <select class="topping">
               <option value="cheese">Cheese</option>
-              <option value="pepperoni">Pepperoni</option>
+              <option value="pepperoni" selected="selected">Pepperoni</option>
               <option value="sausage">Sausage</option>
               <option value="chicken">Chicken</option>
               <option value="onion">Onion</option>
@@ -62,6 +62,40 @@
               <option value="jalapeno">Jalapeno</option>
               <option value="no">None</option>
             </select>
+          </div> -->
+
+          <div class="form-group">
+            <h5>Toppping:</h5>
+            <div class="topping">
+              <div class="checkbox">
+                <label><input type="checkbox" value="cheese">Cheese</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="pepperoni"
+                  selected="selected">Pepperoni</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="sausage">Sausage</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="chicken">Chicken</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="onion">Onion</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="pepper">Pepper</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="mushroom">Mushroom</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="jalapeno">Jalapeno</label>
+              </div>
+              <div class="checkbox">
+                <label><input type="checkbox" value="no">None</label>
+              </div>
+            </div>
           </div>
 
           <div class="additional">
@@ -69,14 +103,14 @@
           </div>
 
           <button type="button" id="addTopping" class="btn btn-primary">Add more topping</button>
-          <button type="button" id='done' class="btn btn-success" data-toggle="modal" data-target="#myModal">Done</button>
+          <button type="button" id='done' class="btn btn-success" data-toggle="modal" data-target="#confirm">Done</button>
 
-          <div id="myModal" class="modal fade" role="dialog">
+          <div id="confirm" class="modal fade" role="dialog">
             <div class="modal-dialog">
               <div class="modal-content">
                 <div class="modal-header">
                   <button type="button" class="close" data-dismiss="modal">&times;</button>
-                  <h4 class="modal-title">Is your order correct?</h4>
+                  <h3 class="modal-title">Your Order</h3>
                 </div>
 
                 <div class="modal-body">

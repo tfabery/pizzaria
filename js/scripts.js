@@ -3,7 +3,7 @@ function Pizza() {
   this.size = '';
   this.crust = '';
   this.sauce = '';
-  this.cheese;
+  this.cheese = '';
   this.topping = [];
 };
 
@@ -50,7 +50,6 @@ Pizza.prototype.price = function() {
   }
 
   total = (crustCost + cheeseCost + toppingCost) * sizeCost;
-  // console.log(total);
   return total;
 };
 
@@ -73,16 +72,12 @@ function addTopping() {
 //===========================FrontEnd==========================
 $(function() {
   var myPizza = new Pizza();
-  // console.log(myPizza);
-  // myPizza.create('large', 'thin', 'original', ['pepperoni']);
-  // console.log(myPizza);
+
   $('#addTopping').click(function() {
     addTopping();
   });
 
-  $('form.pizza').submit(function(event) {
-    event.preventDefault();
-
+  $('#done').click(function(event) {
     var size = $('.size').val();
     var crust = $('.crust').val();
     var cheese = $('.cheese').val();
@@ -91,12 +86,11 @@ $(function() {
 
     $('.topping').each(function() {
       var topping = $(this).val();
-      // console.log(topping);
       toppings.push(topping);
     });
-    // console.log(toppings)
+
     myPizza.create(size, crust, cheese, sauce, toppings);
-    // console.log(myPizza);
-    myPizza.price();
+    var price = myPizza.price();
+    console.log(price);
   });
 });

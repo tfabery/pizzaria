@@ -12,7 +12,7 @@ _This webpage let's a user create a pizza that the user wants and lets the user 
 | 'Create My Pizza' button leads user to pizza creator form  | click 'Create My Pizza' | Pizza creator form is shown |
 | Pizza object can be created  | myPizza = new Pizza() | Pizza {'', '', '', []} |
 | Selected pizza size gets saved into pizza object  | Select 'Large' | Pizza {'lg', 'thin', '', []} |
-| Selected pizza thickness gets saved into pizza object  | Select 'Thin' | Pizza {'lg', 'thin', '', []} |
+| Selected pizza crust gets saved into pizza object  | Select 'Thin' | Pizza {'lg', 'thin', '', []} |
 | Selected sauce gets saved into pizza object | Select 'original' | Pizza {'lg', 'thin', 'og', []} |
 | Selected topping gets saved into pizza object |Select 'pepperoni' | Pizza {'lg', 'thin', 'og', ['pepperoni']} |
 | 'Add more topping' button adds additional topping select box | Click 'Add more topping' | One more topping select box appears |

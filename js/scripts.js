@@ -13,6 +13,7 @@ Pizza.prototype.create = function(size, crust, cheese, sauce, topping) {
   this.cheese = cheese;
   this.sauce = sauce;
   this.topping = topping;
+  console.log(this);
 };
 
 Pizza.prototype.price = function() {
@@ -69,6 +70,7 @@ function addTopping() {
                             '</select>' +
                           '</div>')
 };
+
 //===========================FrontEnd==========================
 $(function() {
   var myPizza = new Pizza();
@@ -81,7 +83,7 @@ $(function() {
     var size = $('.size').val();
     var crust = $('.crust').val();
     var cheese = $('.cheese').val();
-    var sauce = $('sauce').val();
+    var sauce = $('.sauce').val();
     var toppings = [];
 
     $('.topping').each(function() {
@@ -91,6 +93,29 @@ $(function() {
 
     myPizza.create(size, crust, cheese, sauce, toppings);
     var price = myPizza.price();
-    console.log(price);
+
+    $('.modal-body').html('<ul class="onPizza">' +
+                            '<li>' + myPizza.size + '</li>' +
+                            '<li>' + myPizza.crust + '</li>' +
+                            '<li>' + myPizza.sauce + ' sauce</li>' +
+                          '</ul>' +
+                          '<h3>total: $' + price + '</h3>');
+
+    for (var i = 0; i < toppings.length; i ++) {
+      if (toppings[i] === 'no') {
+        $('ul.onPizza').append('<li>' + toppings[i] + ' toppings</li>');
+      }
+      else $('ul.onPizza').append('<li>' + toppings[i] + '</li>');
+    };
+
+    if (myPizza.cheese === 'false') {
+      $('ul.onPizza').append('<li>NO CHEESE CUSTOMER WILL DIE</li>');
+    }
+  });
+
+  $('form#pizza').submit(function(event) {
+    event.preventDefault();
+
+
   });
 });

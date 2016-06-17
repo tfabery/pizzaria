@@ -73,17 +73,17 @@ function addTopping() {
 
 function resetPage() {
   $('.modal-body').empty();
-  $('.additional').empty();
+  // $('.additional').empty();
   $('#confirm').modal('hide');
-  $('.size').val( $('.size').prop('defaultSelected'));
+  $('form').trigger('reset');
 }
 //===========================FrontEnd==========================
 $(function() {
   var myPizza = new Pizza();
 
-  $('#addTopping').click(function() {
-    addTopping();
-  });
+  // $('#addTopping').click(function() {
+  //   addTopping();
+  // });
 
   $('#done').click(function(event) {
     var size = $('.size').val();
@@ -92,13 +92,18 @@ $(function() {
     var sauce = $('.sauce').val();
     var toppings = [];
 
-    $('.topping').each(function() {
-      var topping = $(this).val();
-      toppings.push(topping);
-    });
+    // $('.topping').each(function() {
+    //   var topping = $(this).val();
+    //   toppings.push(topping);
+    // });
+
+    $('input:checkbox[name=topping]:checked').each(function() {
+        var topping = $(this).val();
+        toppings.push(topping);
+    })
 
     myPizza.create(size, crust, cheese, sauce, toppings);
-    var price = myPizza.price();
+    var price = myPizza.price().toFixed(2);
 
     $('.modal-body').html('<ul class="onPizza">' +
                             '<li>' + myPizza.size + '</li>' +
@@ -107,12 +112,14 @@ $(function() {
                           '</ul>' +
                           '<h3>total: $' + price + '</h3>');
 
-    for (var i = 0; i < toppings.length; i ++) {
-      if (toppings[i] === 'no') {
-        $('ul.onPizza').append('<li>' + toppings[i] + ' toppings</li>');
-      }
-      else $('ul.onPizza').append('<li>' + toppings[i] + '</li>');
-    };
+    if (toppings.length === 0) {
+      $('ul.onPizza').append('<li>no toppings</li>');
+    }
+    else {
+      for (var i = 0; i < toppings.length; i ++) {
+        $('ul.onPizza').append('<li>' + toppings[i] + '</li>');
+      };
+    }
 
     if (myPizza.cheese === 'false') {
       $('ul.onPizza').append('<li>NO CHEESE CUSTOMER WILL DIE</li>');

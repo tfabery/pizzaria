@@ -1,3 +1,31 @@
+.container {
+  display: block;
+  margin: auto;
+  text-align: center;
+}
+
+.form-group {
+display: inline-block;
+}
+
 .form-group h5, select {
   display: inline-block;
+}
+
+select, .btn-default {
+  height: 2em;
+  text-align: center;
+}
+
+.btn-default {
+  padding-top: 0.2em;
+}
+
+ul {
+  list-style-type: none;
+}
+
+.topping {
+  margin-left: 45%;
+  margin-top: 0;
 }

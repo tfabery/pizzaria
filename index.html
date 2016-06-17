@@ -9,6 +9,7 @@
     <title>Tony's Pizza</title>
   </head>
   <body>
+    <img src="img/tonyspizza.png" alt="logo" class="img-responsive"/>
 
     <div class="container">
       <div class="create">
@@ -50,58 +51,42 @@
             </select>
           </div>
 
-          <!-- <div class="form-group">
-            <h5>Toppping:</h5>
-            <select class="topping">
-              <option value="cheese">Cheese</option>
-              <option value="pepperoni" selected="selected">Pepperoni</option>
-              <option value="sausage">Sausage</option>
-              <option value="chicken">Chicken</option>
-              <option value="onion">Onion</option>
-              <option value="pepper">Pepper</option>
-              <option value="mushroom">Mushroom</option>
-              <option value="jalapeno">Jalapeno</option>
-              <option value="no">None</option>
-            </select>
-          </div> -->
-
-          <div class="form-group">
-            <h5>Toppping:</h5>
-            <div class="topping">
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="cheese">Cheese</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="pepperoni"
-                  selected="selected">Pepperoni</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="sausage">Sausage</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="chicken">Chicken</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="onion">Onion</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="pepper">Pepper</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="mushroom">Mushroom</label>
-              </div>
-              <div class="checkbox">
-                <label><input type="checkbox" name="topping" value="jalapeno">Jalapeno</label>
+            <div class="row">
+              <div class="col-md-12">
+                <div class="form-group">
+                  <h5>Toppping:</h5>
+                  <button type="button" class="btn btn-default btn-sm dropdown-toggle" data-toggle="dropdown">Topping&nbsp;&nbsp;&nbsp;&nbsp;<span class="caret"></span></button>
+                  <ul class="topping dropdown-menu">
+                    <li>
+                      <a href="#" tabIndex="-1"><input type="checkbox" name="topping" value="cheese">&nbsp;Cheese</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="pepperoni"
+                        selected="selected">&nbsp;Pepperoni</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="sausage">&nbsp;Sausage</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="chicken">&nbsp;Chicken</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="onion">&nbsp;Onion</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="pepper">&nbsp;Pepper</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="mushroom">&nbsp;Mushroom</a>
+                    </li>
+                    <li>
+                      <a href="#"><input type="checkbox" name="topping" value="jalapeno">&nbsp;Jalapeno</a>
+                    </li>
+                  </ul>
+                  <button type="button" id='done' class="btn btn-success" data-toggle="modal" data-target="#confirm">Done</button>
+                </div>
               </div>
             </div>
-          </div>
-
-          <!-- <div class="additional">
-
-          </div>
-
-          <button type="button" id="addTopping" class="btn btn-primary">Add more topping</button> -->
-          <button type="button" id='done' class="btn btn-success" data-toggle="modal" data-target="#confirm">Done</button>
 
           <div id="confirm" class="modal fade" role="dialog">
             <div class="modal-dialog">

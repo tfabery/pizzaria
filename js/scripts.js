@@ -54,23 +54,6 @@ Pizza.prototype.price = function() {
   return total;
 };
 
-function addTopping() {
-  $('.additional').append('<div class="form-group">' +
-                            '<h5>Toppping:</h5>' +
-                            '<select class="topping">' +
-                              '<option value="cheese">Cheese</option>' +
-                              '<option value="pepperoni">Pepperoni</option>' +
-                              '<option value="sausage">Sausage</option>' +
-                              '<option value="chicken">Chicken</option>' +
-                              '<option value="onion">Onion</option>' +
-                              '<option value="pepper">Pepper</option>' +
-                              '<option value="mushroom">Mushroom</option>' +
-                              '<option value="jalapeno">Jalapeno</option>' +
-                              '<option value="">None</option>' +
-                            '</select>' +
-                          '</div>')
-};
-
 function resetPage() {
   $('.modal-body').empty();
   // $('.additional').empty();
@@ -81,21 +64,12 @@ function resetPage() {
 $(function() {
   var myPizza = new Pizza();
 
-  // $('#addTopping').click(function() {
-  //   addTopping();
-  // });
-
   $('#done').click(function(event) {
     var size = $('.size').val();
     var crust = $('.crust').val();
     var cheese = $('.cheese').val();
     var sauce = $('.sauce').val();
     var toppings = [];
-
-    // $('.topping').each(function() {
-    //   var topping = $(this).val();
-    //   toppings.push(topping);
-    // });
 
     $('input:checkbox[name=topping]:checked').each(function() {
         var topping = $(this).val();

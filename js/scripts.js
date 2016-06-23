@@ -1,19 +1,11 @@
 //===========================BackEnd===========================
-function Pizza() {
-  this.size = '';
-  this.crust = '';
-  this.sauce = '';
-  this.cheese = '';
-  this.topping = [];
-};
-
-Pizza.prototype.create = function(size, crust, cheese, sauce, topping) {
+function Pizza(size, crust, cheese, sauce, topping) {
   this.size = size;
   this.crust = crust;
-  this.cheese = cheese;
-  this.sauce = sauce;
+  this.sauce = cheese;
+  this.cheese = sauce;
   this.topping = topping;
-  console.log(this);
+  this.price;
 };
 
 Pizza.prototype.price = function() {
@@ -51,7 +43,7 @@ Pizza.prototype.price = function() {
   }
 
   total = (crustCost + cheeseCost + toppingCost) * sizeCost;
-  return total;
+  this.price = total;
 };
 
 function resetPage() {
@@ -76,8 +68,9 @@ $(function() {
         toppings.push(topping);
     })
 
-    myPizza.create(size, crust, cheese, sauce, toppings);
-    var price = myPizza.price().toFixed(2);
+    myPizza = new Pizza(size, crust, cheese, sauce, toppings);
+    myPizza.price();
+    var price = myPizza.price;
 
     $('.modal-body').html('<ul class="onPizza">' +
                             '<li>' + myPizza.size + '</li>' +

@@ -70,14 +70,13 @@ $(function() {
 
     myPizza = new Pizza(size, crust, cheese, sauce, toppings);
     myPizza.price();
-    var price = myPizza.price;
 
     $('.modal-body').html('<ul class="onPizza">' +
                             '<li>' + myPizza.size + '</li>' +
                             '<li>' + myPizza.crust + '</li>' +
                             '<li>' + myPizza.sauce + ' sauce</li>' +
                           '</ul>' +
-                          '<h3>total: $' + price + '</h3>');
+                          '<h3>total: $' + myPizza.price + '</h3>');
 
     if (toppings.length === 0) {
       $('ul.onPizza').append('<li>no toppings</li>');
